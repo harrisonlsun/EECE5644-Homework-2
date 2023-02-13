@@ -70,20 +70,6 @@ for i in range(n_samples):
             incorrect3.append(sample)
 confusion_matrix = confusion_matrix / n_samples
 
-#confusion_matrix = np.zeros((3, 3))
-#for i in range(n_samples):
-#    sample = samples[i, :].reshape(1, -1)
-#    p1 = g1.score_samples(sample)
-#    p2 = g2.score_samples(sample)
-#    p3 = g3.score_samples(sample)
-#    if p1 > p2 and p1 > p3:
-#        confusion_matrix[0, int(labels[i]-1)] += 1
-#    elif p2 > p1 and p2 > p3:
-#        confusion_matrix[1, int(labels[i]-1)] += 1
-#    else:
-#        confusion_matrix[2, int(labels[i]-1)] += 1
-#confusion_matrix = confusion_matrix / n_samples
-
 # Plot the samples in 3-dimensional space
 # Decision 1: circle marker
 # Decision 2: triangle marker
@@ -101,29 +87,6 @@ ax.set_xlabel('X')
 ax.set_ylabel('Y')
 ax.set_zlabel('Z')
 plt.show()
-
-#fig = plt.figure()
-#ax = fig.add_subplot(111, projection='3d')
-#for i in range(n_samples):
-#    if labels[i] == 1:
-#        if confusion_matrix[0, 0] != 0:
-#            ax.scatter(samples[i, 0], samples[i, 1], samples[i, 2], marker='o', color='g')
-#        else:
-#            ax.scatter(samples[i, 0], samples[i, 1], samples[i, 2], marker='o', color='r')
-#    elif labels[i] == 2:
-#        if confusion_matrix[1, 1] != 0:
-#            ax.scatter(samples[i, 0], samples[i, 1], samples[i, 2], marker='^', color='g')
-#        else:
-#            ax.scatter(samples[i, 0], samples[i, 1], samples[i, 2], marker='^', color='r')
-#    else:
-#        if confusion_matrix[2, 2] != 0:
-#            ax.scatter(samples[i, 0], samples[i, 1], samples[i, 2], marker='s', color='g')
-#        else:
-#            ax.scatter(samples[i, 0], samples[i, 1], samples[i, 2], marker='s', color='r')
-#ax.set_xlabel('X')
-#ax.set_ylabel('Y')
-#ax.set_zlabel('Z')
-#plt.show()
 
 # Plot the confusion matrix
 fig = plt.figure(figsize=(10, 10))
