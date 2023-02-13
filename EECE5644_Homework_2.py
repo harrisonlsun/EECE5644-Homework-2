@@ -1,1 +1,1 @@
-
+# N(a, sigma_a) + N(b, sigma_b) = N(a+b, sigma_a + sigma_b)
